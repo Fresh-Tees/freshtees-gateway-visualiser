@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, DM_Sans } from "next/font/google";
 import { BrandProvider } from "@/contexts/BrandContext";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ gtag('config', '${ga4Id}', { send_page_view: true });
           </>
         ) : null}
         <BrandProvider>{children}</BrandProvider>
+        <Analytics />
       </body>
     </html>
   );
